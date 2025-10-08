@@ -5,16 +5,14 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : [Prastian Hidayat]  
+- **NIM**   : [250202982]  
+- **Kelas** : [1IKRB2]
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
 
 ---
 
@@ -43,7 +41,7 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+> Diagram : ![Screenshot hasil](screenshots/example.png)
 
 ---
 
@@ -71,7 +69,8 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
+  
 - Bagaimana cara Anda mengatasinya?  
 
 ---
