@@ -28,30 +28,44 @@
 ## Langkah Praktikum
 
 1. Mempelajari materi minggu 1 tentang arsitektur sistem operasi.
-2. Menyiapkan akun github dan melakukan `fork` dengan menambahkan `os-202501-<NIM>`.
-3. Mengunduh [Git](https://git-scm.com/downloads) dan [Visual Code Studio](https://code.visualstudio.com/download) serta menginstall Linux  dengan melakukan perintah `wsl --install` di Windows Powershell
+2. Mengunduh [Git](https://git-scm.com/downloads) dan [Visual Code Studio](https://code.visualstudio.com/download) serta menginstall Linux  dengan melakukan perintah `wsl --install` di Windows Powershell
+3. Menyiapkan akun github dan melakukan `fork` dengan menambahkan `os-202501-<NIM>`.
 4. Melakukan konfigurasi Git dengan perintah :
    ```bash
    git config --global user.name "username_github"
    git config --global user.email "emailgithub@gmail.com"
+
+   // Untuk memeriksa apakah konfigurasi berhasil
    git config --list
    ```
-5.  Melakukan `clone` *reposity* dari github masing-masing ke local dekstop dengan perintah `git clone "https://github.com/username/os-202501-NIM.git"` di Terminal atau CMD.
-6.  Menjalankan perintah dasar di terminal Linux , yaitu `uname -a`, `whoami`, `lsmod | head`, dan `dmesg | head`. Tetapi sebelum itu perlu *update* dan *upgrade* terlebih dahulu dengan perintah : 
-    ```bash
+5.  Salin repositori dari GitHub ke komputer lokal dengan perintah. 
+    * Ganti username dan NIM sesuai dengan akun masing-masing.
+    ```
+    git clone "https://github.com/username/os-202501-NIM.git"
+    ```
+6.  Sebelum memulai, pastikan sistem Linux (WSL) Anda dalam kondisi terbaru untuk menjaga stabilitas dan keamanan dengan melakukan perintah :
+      ```bash
     sudo apt update -y
     sudo apt upgrade -y
     ```
-7.  Salin dah tempel ke folder `code` untuk hasil perintah dasar linux serta screenshots hasilnya dan simpan ke folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
-8.  Membuat diagram arsitektur yang menggambarkan alur interaksi dari *User → Application → System Call → Kernel → Hardware* menggunakan draw.io atau sejenisnya dan menyimpannya sebagai `diagram-os.png`.
-9.  Menuliskan hasil analisis sebagai laporan dari hasil praktikum minggu 1  di `praktikum/week1-intro-arsitektur-os/laporan.md`.
-10. Menambahkan screenshot hasil diagram dan experiment linux  ke dalam folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
-11. Melakukan *commit* dan *push* seluruh hasil pekerjaan ke repositori GitHub dengan cara :
-      ```bash
-      git add .
-      git commit -m "Minggu 1 - Arsitektur Sistem Operasi dan Kernel"
-      git push origin main
-      ```
+7.  Menjalankan perintah dasar di terminal Linux , yaitu `uname -a`, `whoami`, `lsmod | head`, dan `dmesg | head`. 
+
+8.  Salin dah tempel ke folder `praktikum/week1-intro-arsitektur-os/code/` untuk hasil perintah dasar linux serta screenshots hasilnya dan simpan ke folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
+9.  Membuat diagram arsitektur yang menggambarkan alur interaksi dari *User → Application → System Call → Kernel → Hardware* menggunakan draw.io atau sejenisnya dan menyimpannya sebagai `diagram-os.png`.
+10. Menuliskan hasil analisis sebagai laporan dari hasil praktikum minggu 1  di `praktikum/week1-intro-arsitektur-os/laporan.md`.
+11. Menambahkan screenshot hasil diagram dan experiment linux  ke dalam folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
+12. Melakukan *commit* dan *push* seluruh hasil pekerjaan ke repositori GitHub dengan cara :
+  
+    ```
+    // Menambahkan semua perubahan untuk di commit
+    git add .
+
+    // Membuat catatan commit dengan pesan dari format yang telah di atur
+    git commit -m "Minggu 1 - Arsitektur Sistem Operasi dan Kernel"
+
+    // Push hasil commit ke repositori GitHub
+    git push origin main
+    ```
 
 -----
 
