@@ -92,7 +92,7 @@ dmesg | head
 -----
 
 ## Hasil Eksekusi 
-![Linux](./screenshots/linux-minggu-1.jpg)
+![Linux](./screenshots/linux_kernel.jpg)
 ---
 ![Diagram](./screenshots/diagram-os.png)
 
