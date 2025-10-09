@@ -1,0 +1,19 @@
+/home/prastianhd/.hushlogin file.
+prastianhd@OX123:~$ uname -a
+Linux OX123 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+prastianhd@OX123:~$ whoami
+prastianhd
+prastianhd@OX123:~$ lsmod | head
+Module                  Size  Used by
+prastianhd@OX123:~$ dmesg | head
+[    0.000000] Linux version 5.15.167.4-microsoft-standard-WSL2 (root@f9c826d3017f) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.37) #1 SMP Tue Nov 5 00:21:55 UTC 2024
+[    0.000000] Command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=12 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000000e0000-0x00000000000e0fff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000001fffff] ACPI data
+prastianhd@OX123:~$
