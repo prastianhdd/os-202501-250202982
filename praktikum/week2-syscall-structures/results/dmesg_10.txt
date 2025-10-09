@@ -1,0 +1,11 @@
+prastianhd@OX123:~$ dmesg | tail -n 10
+[ 1579.779129] systemd-journald[41]: Time jumped backwards, rotating.
+[ 2303.301400] systemd-journald[41]: Time jumped backwards, rotating.
+[ 3744.904149] systemd-journald[41]: Time jumped backwards, rotating.
+[ 4016.350130] WSL (181) ERROR: CheckConnection: getaddrinfo() failed: -5
+[ 4469.971763] systemd-journald[41]: Time jumped backwards, rotating.
+[ 5186.845765] WSL (181) ERROR: CheckConnection: getaddrinfo() failed: -5
+[ 5526.105224] systemd-journald[41]: Time jumped backwards, rotating.
+[ 5999.550705] WSL (181) ERROR: CheckConnection: getaddrinfo() failed: -5
+[ 6639.173402] systemd-journald[41]: Time jumped backwards, rotating.
+[ 6699.180989] systemd-journald[41]: Time jumped backwards, rotating.
