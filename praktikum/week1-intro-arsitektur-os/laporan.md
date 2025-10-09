@@ -29,7 +29,7 @@
 
 1. Mempelajari materi minggu 1 tentang arsitektur sistem operasi.
 2. Menyiapkan akun github dan melakukan `fork` dengan menambahkan `os-202501-<NIM>`.
-3. Mengunduh [Git](https://git-scm.com/downloads) dan [Visual Code Studio](https://code.visualstudio.com/download) serta menginstall Linux di WSL dengan melakukan perintah `wsl --install` di Windows Powershell
+3. Mengunduh [Git](https://git-scm.com/downloads) dan [Visual Code Studio](https://code.visualstudio.com/download) serta menginstall Linux  dengan melakukan perintah `wsl --install` di Windows Powershell
 4. Melakukan konfigurasi Git dengan perintah :
    ```bash
    git config --global user.name "username_github"
@@ -42,7 +42,7 @@
     sudo apt update -y
     sudo apt upgrade -y
     ```
-7.  Salin dah tempel ke folder `code` untuk hasil perintah dasar linux.
+7.  Salin dah tempel ke folder `code` untuk hasil perintah dasar linux serta screenshots hasilnya dan simpan ke folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
 8.  Membuat diagram arsitektur yang menggambarkan alur interaksi dari *User → Application → System Call → Kernel → Hardware* menggunakan draw.io atau sejenisnya dan menyimpannya sebagai `diagram-os.png`.
 9.  Menuliskan hasil analisis sebagai laporan dari hasil praktikum minggu 1  di `praktikum/week1-intro-arsitektur-os/laporan.md`.
 10. Menambahkan screenshot hasil diagram dan experiment linux  ke dalam folder `praktikum/week1-intro-arsitektur-os/screenshots/`.
@@ -87,7 +87,7 @@ dmesg | head
 ## Analisis
 
 
-### Analisis Perintah
+### 1. Analisis Perintah
 
 - **`uname -a`**
 Perintah ini mengidentifikasi **kernel Linux** yang digunakan. Menunjukkan bahwa kernel yang digunakan adalah versi Linux 5.15.167.4-microsoft-standard-WSL2, mengonfirmasi penggunaan WSL 2.
@@ -101,13 +101,13 @@ Perintah ini menunjukkan **modul-modul kernel** yang sedang dimuat. Ini adalah b
 - **`dmesg | head`**
 Perintah ini menampilkan **pesan-pesan dari kernel ring buffer**, yang merupakan log **proses booting**. Outputnya mencakup informasi tentang **deteksi *hardware***, seperti CPU (Intel dan AMD), dan memori. Ini memberikan bukti langsung bahwa kernel berhasil mengenali dan berinteraksi dengan komponen fisik atau virtual dari komputer.
 
-### Analisis Arsitektur OS
+### 2. Analisis Arsitektur OS
 
 * Arsitektur sistem operasi modern didasarkan pada pemisahan antara **mode kernel** yang memiliki hak istimewa dan **mode pengguna** yang terbatas. **Kernel** sebagai inti OS, berjalan dalam mode kernel untuk mengelola perangkat keras secara aman dan menyediakan abstraksi seperti file dan proses untuk program aplikasi. 
 * Program aplikasi yang berjalan dalam mode pengguna tidak dapat mengakses perangkat keras secara langsung, mereka harus menggunakan antarmuka **system call** untuk meminta layanan dari kernel. 
 * System call inilah yang menjembatani kedua mode tersebut, memungkinkan aplikasi meminta fungsi kernel dieksekusi secara terkendali.
 
-### Analisis Lingkungan Linux VS Windows
+### 3. Analisis Lingkungan Linux VS Windows
 * Linux memiliki antarmuka baris perintah (CLI) yang kuat seperti shell. CLI mengutamakan efisiensi, kekuatan, dan fleksibilitas, memungkinkan pengguna untuk menggabungkan perintah-perintah sederhana untuk menyelesaikan tugas-tugas rumit. Di dalam linux semua berisi code atau perintah yang sangat berbeda dengan interaksi di windows
 
 * Windows memiliki antarmuka pengguna grafis (GUI) ramah pengguna bagi semua kalangan. GUI Windows berorientasi pada visual dan system call  yang membuatnya lebih mudah diakses oleh pemula. Interaksi di Windows mudah karena kita interaksi langsung dengan ikon dan jendela, cukup klik dan eksekusi.
