@@ -21,7 +21,7 @@
 
 ## Dasar Teori
 
-  * Sistem operasi adalah perangkat lunak yang mengelola semua perangkat keras komputer yang kompleks. Arsitektur OS modern mengabstraksikan perangkat keras, mengubahnya menjadi sumber daya yang rapi dan mudah dikelola. OS mengelola sumber daya ini, seperti CPU, memori, dan perangkat I/O, serta menyediakan panggilan sistem untuk layanan. Komponen-komponen utamanya meliputi proses, manajemen memori (termasuk memori virtual), sistem file, dan I/O. Arsitektur dapat berupa monolitik, berlapis, atau mikrokernel.
+  Sistem operasi adalah perangkat lunak yang mengelola semua perangkat keras komputer yang kompleks. Arsitektur OS modern mengabstraksikan perangkat keras, mengubahnya menjadi sumber daya yang rapi dan mudah dikelola. OS mengelola sumber daya ini, seperti CPU, memori, dan perangkat I/O, serta menyediakan panggilan sistem untuk layanan. Komponen-komponen utamanya meliputi proses, manajemen memori (termasuk memori virtual), sistem file, dan I/O. Arsitektur dapat berupa monolitik, berlapis, atau mikrokernel.
 
 -----
 
