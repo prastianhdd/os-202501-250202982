@@ -8,7 +8,7 @@
 
   - **Nama** : Prastian Hidayat
   - **NIM** : 250202982
-  - **Kelas** : 1IKRB2
+  - **Kelas** : 1IKRB
 
 -----
 
