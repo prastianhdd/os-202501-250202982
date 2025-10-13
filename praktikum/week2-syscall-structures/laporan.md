@@ -80,7 +80,7 @@ dmesg | tail -n 10
 
 ## Hasil Eksekusi
 
-### Eksperimen 1 – Analisis System Call `ls`
+### Eksperimen 1 
 ![Strace ls](./screenshots/syscall_ls.png)
 
 **Tabel Observasi `strace ls`**
@@ -100,7 +100,7 @@ dmesg | tail -n 10
 
 -----
 
-### Eksperimen 2 – Analisis System Call File I/O
+### Eksperimen 2 
 ![strace io](./screenshots/strace_io.png)
 
 **Tabel Observasi `strace -e trace=open,read,write,close cat /etc/passwd`**
@@ -113,7 +113,7 @@ dmesg | tail -n 10
 
 -----
 
-### Eksperimen 3 – Mode User vs Kernel
+### Eksperimen 3 
 ![dmesg](./screenshots/dmesg.png)
 
 Perbedaan utama antara output `dmesg | tail -n 10` dengan output program biasa `dmesg | head`
