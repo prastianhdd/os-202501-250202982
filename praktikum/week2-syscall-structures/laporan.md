@@ -129,15 +129,24 @@ Perbedaan utama antara output `dmesg | tail -n 10` dengan output program biasa `
 
 Sistem operasi (OS) berfungsi sebagai penghubung antara pengguna dan perangkat keras komputer, dengan salah satu tugas utamanya adalah mengatur dan mengawasi penggunaan sumber daya. Untuk menjalankan fungsi ini secara aman dan teratur, OS mengimplementasikan mekanisme fundamental yang disebut system call. System call adalah jembatan yang menyediakan antarmuka antara program yang sedang berjalan (proses) dan inti dari sistem operasi itu sendiri. Pentingnya mekanisme ini tidak hanya terletak pada fungsionalitas, tetapi juga sebagai pilar utama keamanan dan proteksi sistem **(Watrianthos, 2018, hlm. 7).**
 
+---
+
 **Mengapa System Call Penting untuk Keamanan OS?**
+
 Keamanan sebuah OS sangat bergantung pada kemampuannya untuk mengontrol akses ke sumber daya sistem. Program pengguna tidak diizinkan untuk berinteraksi langsung dengan perangkat keras seperti disk atau memori secara sembarangan, karena hal ini dapat menyebabkan kerusakan sistem, inkonsistensi data, atau pelanggaran privasi antar proses. Di sinilah system call memainkan peran krusialnya sebagai "penjaga gerbang".
 
 Setiap kali sebuah program pengguna perlu melakukan operasi yang memerlukan hak istimewa—seperti membaca berkas atau membuat proses baru—ia harus meminta OS untuk melakukannya melalui system call. Dengan memusatkan semua permintaan ini, OS dapat menjalankan fungsi proteksinya dengan efektif. **Menurut Watrianthos (2018, hlm. 20)**, mekanisme proteksi ini harus dapat membedakan antara penggunaan yang diizinkan dan yang tidak, sehingga permintaan ilegal akan ditolak. Hal ini sejalan dengan fungsi OS sebagai program pengendali untuk menghindari kekeliruan (error) dan memastikan program jahat tidak dapat melewati batasan keamanan.
 
-Bagaimana OS Memastikan Transisi User–Kernel Berjalan Aman?
+---
+
+***Bagaimana OS Memastikan Transisi User–Kernel Berjalan Aman?***
+
 Sistem operasi modern memisahkan operasinya ke dalam lapisan-lapisan logis, dengan kernel sebagai inti yang memiliki kontrol penuh. Program pengguna berjalan di lapisan luar dengan hak akses terbatas, sementara kernel berjalan di lapisan dalam yang terlindungi. Satu-satunya cara yang sah bagi program pengguna untuk masuk ke mode kernel adalah melalui system call. Ketika dipicu, kernel akan mengambil alih kontrol, memvalidasi semua parameter dari pengguna, dan menjalankan tugasnya. Setelah selesai, kernel mengembalikan hasilnya dan mentransfer kontrol kembali ke mode pengguna. Proses formal ini mencegah program pengguna mengeksekusi kode istimewa secara tidak sah atau mengganggu operasi inti OS (Watrianthos, 2018, hlm. 21).
 
-Contoh System Call yang Sering Digunakan di Linux (Berdasarkan UNIX)
+--- 
+
+**Contoh System Call yang Sering Digunakan di Linux**
+
 **Watrianthos (2018, hlm. 21)** memberikan beberapa contoh system call pada sistem operasi UNIX, yang menjadi dasar bagi Linux. Beberapa di antaranya adalah:
 
 * `read` - Sebuah system call untuk operasi I/O, khususnya membaca data dari sebuah berkas. Parameter yang dibutuhkan biasanya adalah buffer (penyimpan data), ukuran maksimal data, dan identifikasi berkasnya.
@@ -149,9 +158,10 @@ Contoh System Call yang Sering Digunakan di Linux (Berdasarkan UNIX)
 
 Dari praktikum ini, dapat ditarik beberapa kesimpulan:
 
-1.  Perintah `strace` adalah alat diagnostik yang sangat ampuh untuk memvisualisasikan interaksi tak terlihat antara program aplikasi di *user mode* dan kernel OS melalui system call.
-2.  Setiap perintah sederhana yang dijalankan di terminal, seperti `ls` atau `cat`, sebenarnya memicu serangkaian puluhan hingga ratusan system call untuk tugas-tugas seperti memuat library, mengalokasikan memori, dan melakukan operasi I/O.
-3.  System call adalah mekanisme esensial yang tidak hanya menyediakan fungsionalitas, tetapi juga menegakkan keamanan dan stabilitas sistem dengan menjadi satu-satunya gerbang yang sah bagi aplikasi untuk mengakses sumber daya yang dikelola kernel.
+* `strace` adalah contoh perintah linux yang efektif untuk memvisualisasikan interaksi antara program dan kernel. Hal ini dibuktikan melalui Eksperimen 1 dan 2, di mana `strace` berhasil menunjukkan system call yang dijalankan oleh perintah `ls` dan `cat`. 
+
+* Setiap perintah sederhana memicu serangkaian system call yang kompleks. Eksperimen 1  menunjukkan bahwa satu perintah sederhana menghasilkan puluhan system call untuk berbagai tugas, seperti eksekusi program `execve()`, alokasi memori `brk()`, dan akses file `openat()`. Ini membuktikan bahwa pengguna tidak bisa langsung memanggil dari hardware secara mandiri, melainkan sangat bergantung pada layanan yang diminta dari kernel dan juga system call.
+
 
 -----
 
@@ -160,33 +170,63 @@ Dari praktikum ini, dapat ditarik beberapa kesimpulan:
 1.  **Apa fungsi utama system call dalam sistem operasi?**
 
     **Jawaban:**
-    Fungsi utamanya adalah untuk menyediakan antarmuka yang aman dan terkontrol bagi program aplikasi (yang berjalan di *user mode*) untuk meminta layanan dari kernel sistem operasi (yang berjalan di *kernel mode*), seperti akses file, manajemen proses, dan komunikasi jaringan.
+    
+    Fungsi utama system call adalah menyediakan antarmuka atau jembatan antara program pengguna yang sedang berjalan dengan sistem operasi. Karena program tidak boleh mengakses perangkat keras secara langsung demi keamanan, mereka harus meminta "layanan" dari kernel (inti sistem operasi) melalui system call untuk melakukan operasi penting seperti mengakses berkas atau perangkat I/O.
+
+---
 
 2.  **Sebutkan 4 kategori system call yang umum digunakan.**
+    * Manajemen Proses
 
-    **Jawaban:**
+    | System Call | Keterangan |
+    | :--- | :--- |
+    | `fork()` | Membuat sebuah proses baru yang identik dengan proses induknya. |
+    | `execve()` | Mengganti program yang sedang dijalankan oleh sebuah proses dengan program yang baru. |
+    | `exit()` | Menghentikan eksekusi sebuah proses. |
+    | `wait()` | Membuat sebuah proses induk menunggu hingga salah satu proses anaknya selesai dieksekusi. |
 
-      * **Manajemen Proses**: `fork()`, `execve()`, `exit()`, `wait()`
-      * **Manajemen File**: `open()`, `read()`, `write()`, `close()`, `stat()`
-      * **Manajemen Perangkat**: `ioctl()`, `read()`, `write()`
-      * **Komunikasi**: `pipe()`, `socket()`, `connect()`
+
+    * Manajemen Berkas
+
+    | System Call | Keterangan |
+    | :--- | :--- |
+    | `open()` | Membuka sebuah berkas untuk dibaca atau ditulis. |
+    | `read()` | Membaca data dari sebuah berkas yang sudah dibuka. |
+    | `write()` | Menulis data ke sebuah berkas yang sudah dibuka. |
+    | `close()` | Menutup sebuah berkas yang sudah selesai digunakan. |
+
+    * Manajemen Perangkat (I/O)
+
+    | System Call | Keterangan |
+    | :--- | :--- |
+    | `ioctl()` | Mengirimkan perintah kontrol khusus ke sebuah *device driver*. |
+    | `read()` | Membaca data dari sebuah perangkat (misalnya keyboard atau disk). |
+    | `write()` | Menulis data ke sebuah perangkat (misalnya layar atau disk). |
+
+    * Komunikasi
+
+    | System Call | Keterangan |
+    | :--- | :--- |
+    | `pipe()` | Membuat sebuah saluran komunikasi satu arah antara dua proses terkait. |
+    | `socket()` | Membuat sebuah titik akhir (*endpoint*) untuk komunikasi jaringan. |
+    | `connect()` | Membangun koneksi dari satu *socket* ke *socket* lainnya. |
+
+---
 
 3.  **Mengapa system call tidak bisa dipanggil langsung oleh user program?**
 
     **Jawaban:**
-    System call tidak bisa dipanggil langsung untuk alasan keamanan dan stabilitas. Jika program pengguna dapat memanggil fungsi kernel secara langsung, mereka akan melewati semua mekanisme perlindungan OS. Ini akan memungkinkan program apa pun untuk mengakses perangkat keras secara ilegal, merusak data kernel, atau mengganggu proses lain, yang pada akhirnya akan menyebabkan sistem crash atau celah keamanan. Pemanggilan harus melalui mekanisme *trap* yang terkontrol untuk memastikan kernel tetap memegang kendali penuh.
+
+    System call tidak bisa dipanggil langsung untuk alasan keamanan dan proteksi sistem. Jika program pengguna bisa memanggil fungsi kernel secara langsung, mereka bisa melewati mekanisme perlindungan OS. Ini akan memungkinkan program apa pun untuk mengakses sumber daya secara ilegal, mengganggu proses lain, atau bahkan merusak sistem. Pemanggilan harus melalui mekanisme transisi yang terkontrol (user mode ke kernel mode) untuk memastikan kernel tetap memegang kendali penuh atas sistem.
 
 -----
 
 ## Refleksi Diri
 
-  - **Apa bagian yang paling menantang minggu ini?**
+- **Apa bagian yang paling menantang minggu ini?**
 
-      * Bagian yang paling menantang adalah memahami output dari `strace` pada awalnya. Terlihat sangat banyak dan teknis, sehingga sulit untuk mengidentifikasi mana system call yang paling penting dan apa sebenarnya fungsinya dalam konteks program yang sedang dijalankan.
 
-  - **Bagaimana cara Anda mengatasinya?**
-
-      * Saya mengatasinya dengan membaca manual (`man strace` dan `man 2 syscalls`) untuk memahami beberapa system call kunci seperti `execve`, `openat`, dan `mmap`. Selain itu, menggunakan opsi `-e trace=` seperti pada eksperimen kedua sangat membantu untuk memfokuskan analisis pada system call tertentu dan memahami alurnya secara lebih jelas.
+- **Bagaimana cara Anda mengatasinya?**
 
 -----
 
