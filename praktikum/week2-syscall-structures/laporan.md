@@ -45,8 +45,8 @@ System call menyediakan interface antara program pengguna yang berjalan dan bagi
     * Screenshot hasil outputnya dan letakan di folder `week2-syscall-structures/screenshots/` dengan nama `strace_io.png`
     * Salin hasil outputnya juga kemudian letakan di folder `week2-syscall-structures/result/` dengan nama `strace_io.txt`
 6.  Melakukan **Eksperimen 3** dengan menjalankan `dmesg | tail -n 10` untuk mengamati pesan-pesan dari kernel dan membedakannya dengan output program biasa.
-    * Screenshot hasil outputnya dan letakan di folder `week2-syscall-structures/screenshots/` dengan nama `dmesg_10.png`
-    * Salin hasil outputnya juga kemudian letakan di folder `week2-syscall-structures/result/` dengan nama `dmesg_10.txt`
+    * Screenshot hasil outputnya dan letakan di folder `week2-syscall-structures/screenshots/` dengan nama `dmesg.png`
+    * Salin hasil outputnya juga kemudian letakan di folder `week2-syscall-structures/result/` dengan nama `dmesg.txt`
 7.  Membuat diagram alur yang menggambarkan proses eksekusi system call.
     * Screenshot atau download diagram kemudian letakan ke folder `week2-syscall-structures/screenshots/`
 8.  Melakukan *commit* dan *push* seluruh hasil praktikum minggu 2 ini dengan pesan commit di bawah :
