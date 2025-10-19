@@ -1,0 +1,41 @@
+prastianhd@OX123:~$ mkdir praktikum-week-3
+prastianhd@OX123:~$ ls
+praktikum-week-3
+prastianhd@OX123:~$ pwd
+/home/prastianhd
+prastianhd@OX123:~$ ls -l
+total 4
+drwxr-xr-x 2 prastianhd prastianhd 4096 Oct 10 02:33 praktikum-week-3
+prastianhd@OX123:~$ cd /tmp
+prastianhd@OX123:/tmp$ ls -a
+.
+..
+snap-private-tmp
+systemd-private-cb94a0eb5b014480850ec1e48b8f4bf6-polkit.service-SSa9Qd
+.ICE-unix
+systemd-private-cb94a0eb5b014480850ec1e48b8f4bf6-systemd-logind.service-LmrGiP
+.X11-unix
+systemd-private-cb94a0eb5b014480850ec1e48b8f4bf6-systemd-resolved.service-T683lf
+.XIM-unix
+systemd-private-cb94a0eb5b014480850ec1e48b8f4bf6-systemd-timesyncd.service-1zUtPD
+.font-unix
+systemd-private-cb94a0eb5b014480850ec1e48b8f4bf6-ws1-pro.service-C8Quax
+prastianhd@OX123:/tmp$ cd
+prastianhd@OX123:~$ cat /etc/passwd | head -n 5
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+prastianhd@OX123:~$ echo "Hello Prastian Hidayat - 250202982" > percobaan.txt
+prastianhd@OX123:~$ ls -l percobaan.txt
+-rw-r--r-- 1 prastianhd prastianhd 35 Oct 10 02:34 percobaan.txt
+prastianhd@OX123:~$ sudo chmod 600 percobaan.txt
+prastianhd@OX123:~$ ls -l percobaan.txt
+-rw------- 1 prastianhd prastianhd 35 Oct 10 02:34 percobaan.txt
+prastianhd@OX123:~$ sudo chown root percobaan.txt
+prastianhd@OX123:~$ ls -l percobaan.txt
+-rw------- 1 root prastianhd 35 Oct 10 02:34 percobaan.txt
+prastianhd@OX123:~$ sudo cat percobaan.txt
+Hello Prastian Hidayat - 250202982
+prastianhd@OX123:~$
