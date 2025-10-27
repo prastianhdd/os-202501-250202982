@@ -1,0 +1,9 @@
+prastianhd@OX123:~$ sleep 1000 &
+ps aux | grep sleep
+[1] 454
+prastia+     454  0.0  0.0   3124  1100 pts/0    S    08:10   0:00 sleep 1000
+prastia+     456  0.0  0.0   4088  1944 pts/0    S+   08:10   0:00 grep --color=auto sleep
+prastianhd@OX123:~$ kill 454
+prastianhd@OX123:~$ ps aux | grep sleep
+prastia+     458  0.0  0.0   4088  2028 pts/0    S+   08:10   0:00 grep --color=auto sleep
+[1]+  Terminated              sleep 1000

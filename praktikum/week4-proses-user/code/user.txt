@@ -1,0 +1,52 @@
+prastianhd@OX123:~$ whoami
+prastianhd
+prastianhd@OX123:~$ id
+uid=1000(prastianhd) gid=1000(prastianhd) groups=1000(prastianhd),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(users)
+prastianhd@OX123:~$ groups
+prastianhd adm cdrom sudo dip plugdev users
+prastianhd@OX123:~$ sudo adduser praktikan
+[sudo] password for prastianhd:
+info: Adding user 'praktikan' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group 'praktikan' (1001) ...
+info: Adding new user 'praktikan' (1001) with group 'praktikan' ...
+info: Creating home directory '/home/praktikan' ...
+info: Copying files from '/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for praktikan
+Enter the new value, or press ENTER for the default
+    Full Name []:
+    Room Number []:
+    Work Phone []:
+    Home Phone []:
+    Other []:
+Is the information correct? [Y/n] y
+info: Adding new user 'praktikan' to supplemental / extra groups 'users' ...
+info: Adding user 'praktikan' to group 'users' ...
+prastianhd@OX123:~$ su - praktikan
+Password:
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:    https://landscape.canonical.com
+ * Support:       https://ubuntu.com/pro
+
+System information as of Fri Oct 10 21:07:42 WIB 2025
+
+  System load:  0.0               Processes:             31
+  Usage of /:   0.2% of 1006.85GB   Users logged in:       1
+  Memory usage: 1%                IPv4 address for eth0: 172.24.218.170
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+     https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/praktikan/.hushlogin file.
+praktikan@OX123:~$ whoami
+praktikan
+praktikan@OX123:~$
