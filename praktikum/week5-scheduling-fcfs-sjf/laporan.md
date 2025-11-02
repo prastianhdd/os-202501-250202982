@@ -12,7 +12,7 @@ Topik: Penjadwalan CPU FCFS dan SJF
 ---
 
 ## Tujuan
-1. Mampu menghitung waiting time dan turnaround time untuk algoritma FCFS dan SJF.
+1. Mampu menghitung *waiting time* dan *turnaround* time untuk algoritma FCFS dan SJF.
 2. Mampu menyajikan hasil perhitungan dalam tabel yang rapi dan mudah dibaca.
 3. Mampu membandingkan performa FCFS dan SJF berdasarkan hasil analisis.
 4. Mampu menjelaskan kelebihan dan kekurangan masing-masing algoritma.
@@ -20,11 +20,11 @@ Topik: Penjadwalan CPU FCFS dan SJF
 ---
 
 ## Dasar Teori
-Dalam sistem operasi multitasking, Penjadwalan CPU (CPU Scheduling) adalah proses fundamental di mana sistem operasi (OS) memutuskan proses mana di antrian 'ready' yang akan dialokasikan ke CPU. Tujuannya adalah untuk memaksimalkan penggunaan CPU dan throughput, serta meminimalkan waktu tunggu (waiting time) dan waktu penyelesaian (turnaround time) bagi pengguna.
+Dalam sistem operasi multitasking, Penjadwalan CPU (*CPU Scheduling*) adalah proses fundamental di mana sistem operasi (OS) memutuskan proses mana di antrian `ready` yang akan dialokasikan ke CPU. Tujuannya adalah untuk memaksimalkan penggunaan CPU dan throughput, serta meminimalkan waktu tunggu (*waiting time*) dan waktu penyelesaian (*turnaround time*) bagi pengguna.
 
-* First Come First Served (FCFS): Ini adalah algoritma penjadwalan paling sederhana. Proses yang meminta CPU terlebih dahulu akan dilayani terlebih dahulu (sesuai urutan Arrival Time). Implementasinya mudah menggunakan antrian FIFO (First-In, First-Out), namun dapat menyebabkan convoy effect di mana proses singkat harus menunggu proses panjang yang datang lebih dulu.
+* **First Come First Served (FCFS)**: Ini adalah algoritma penjadwalan paling sederhana. Proses yang meminta CPU terlebih dahulu akan dilayani terlebih dahulu (sesuai urutan Arrival Time). Implementasinya mudah menggunakan antrian FIFO (First-In, First-Out), namun dapat menyebabkan convoy effect di mana proses singkat harus menunggu proses panjang yang datang lebih dulu.
 
-* Shortest Job First (SJF): Algoritma ini mengalokasikan CPU ke proses dengan estimasi waktu eksekusi (Burst Time) terpendek. Jika ada dua proses dengan burst time yang sama, FCFS digunakan. SJF terbukti optimal dalam memberikan rata-rata waktu tunggu minimum, namun kelemahan utamanya adalah potensi terjadinya starvation pada proses yang memiliki burst time panjang.
+* **Shortest Job First (SJF)**: Algoritma ini mengalokasikan CPU ke proses dengan estimasi waktu eksekusi (Burst Time) terpendek. Jika ada dua proses dengan burst time yang sama, FCFS digunakan. SJF terbukti optimal dalam memberikan rata-rata waktu tunggu minimum, namun kelemahan utamanya adalah potensi terjadinya starvation pada proses yang memiliki burst time panjang.
 ---
 
 ## Langkah Praktikum
