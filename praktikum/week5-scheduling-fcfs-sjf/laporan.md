@@ -72,6 +72,9 @@ Sertakan screenshot hasil percobaan atau diagram:
 ### Eksperimen 1 – FCFS (First Come First Served)
 Proses dieksekusi berdasarkan urutan kedatangan (Arrival Time). Urutan Eksekusi: P1 -> P2 -> P3 -> P4
 
+* Tabel Waktu 
+  ![hasil](./screenshots/fcfs.png)
+
 * Gantt Chart FCFS:
    ```
    | P1 | P2 | P3 | P4 |
@@ -94,10 +97,13 @@ Proses dieksekusi berdasarkan Burst Time terpendek dari antrian proses yang tela
 
 Urutan Eksekusi: P1 -> P4 -> P3 -> P2
 
-* Gantt Chart FCFS:
+* Tabel Waktu
+  ![hasil](./screenshots/sjf.png)
+
+* Gantt Chart SJF:
    ```
-   | P1 | P2 | P3 | P4 |
-   0    6    9   16   24
+   | P1 | P4 | P3 | P2 |
+   0    6    9    16   24
    ```
 
 * Tabel Perhitungan SJF:
@@ -123,24 +129,24 @@ Urutan Eksekusi: P1 -> P4 -> P3 -> P2
 ---
 
 ## Analisis
-Berdasarkan metrik evaluasi utama, SJF terbukti jauh lebih unggul dalam skenario pengujian ini. SJF berhasil mencapai Rata-rata Waktu Tunggu (Average Time) sebesar 6,25 dan Rata-rata Waktu Penyelesaian (Turnaround Time) sebesar 12,25. Angka ini menunjukkan peningkatan efisiensi yang substansial dibandingkan FCFS, yang mencatatkan Avg Time 8,75 dan Turnaround Time 14,75.
+Berdasarkan metrik evaluasi utama, SJF terbukti jauh lebih unggul dalam skenario pengujian ini. SJF berhasil mencapai Rata-rata Waktu Tunggu (*Average Time*) sebesar 6,25 dan Rata-rata Waktu Penyelesaian (*Turnaround Time*) sebesar 12,25. Angka ini menunjukkan peningkatan efisiensi yang substansial dibandingkan FCFS, yang mencatatkan Avg Time 8,75 dan Turnaround Time 14,75.
 
-Kelemahan pada FCFS yaitu efek konvoi (convoy effect). Algoritma FCFS, yang beroperasi murni berdasarkan urutan kedatangan (P1 > P2 > P3 > P4), memaksa proses-proses singkat untuk menunggu di belakang proses-proses panjang yang kebetulan tiba lebih dulu. Contoh paling jelas dalam data ini adalah P4. Meskipun P4 hanya membutuhkan Burst Time 3 unit, P4 (yang tiba di detik ke-3) harus mengantri di belakang P1 (BT 6), P2 (BT 8), dan P3 (BT 7). Akibatnya, P4 baru dapat dieksekusi pada detik ke-21, mengakibatkan Waiting Time yang sangat tinggi, yaitu 18 unit (Start 21 - Arrival 3). Waktu tunggu yang tidak proporsional untuk satu proses pendek inilah yang secara drastis meningkatkan AWT keseluruhan sistem.
+Kelemahan pada FCFS yaitu efek konvoi (*convoy effect*). Algoritma FCFS, yang beroperasi murni berdasarkan urutan kedatangan, memaksa proses-proses singkat untuk menunggu di belakang proses-proses panjang yang kebetulan tiba lebih dulu. Contoh paling jelas dalam data ini adalah P4. Meskipun P4 hanya membutuhkan Burst Time 3 unit, P4 (yang tiba di detik ke-3) harus mengantri di belakang. Akibatnya, P4 baru dapat dieksekusi pada detik ke-21, mengakibatkan *Waiting Time* yang sangat tinggi, yaitu 18 unit (Start 21 - Arrival 3). Waktu tunggu yang tidak proporsional untuk satu proses pendek inilah yang secara drastis meningkatkan AWT keseluruhan sistem.
 
-SJF berhasil mengatasi masalah ini dengan pendekatan yang lebih cerdas. Logika SJF adalah memprioritaskan eksekusi berdasarkan Burst Time terpendek dari semua proses yang telah tiba di antrian arrival time. Dalam simulasi, setelah P1 selesai pada detik ke-6, semua proses (P2, P3, dan P4) telah berada di antrian. SJF kemudian memindai antrian ini dan memilih P4 (BT 3) untuk dieksekusi terlebih dahulu, bukan P2 yang tiba lebih awal. Langkah ini membersihkan proses singkat dengan cepat, sehingga Waiting Time P4 hanya 3 unit (Start 6 - Arrival 3).
+SJF berhasil mengatasi masalah ini dengan pendekatan yang lebih cerdas. Logika SJF adalah memprioritaskan eksekusi berdasarkan *Burst Time* terpendek dari semua proses yang telah tiba di antrian *arrival time*. Dalam simulasi, setelah P1 selesai pada detik ke-6, semua proses telah berada di antrian. SJF kemudian memindai antrian ini dan memilih P4 (BT 3) untuk dieksekusi terlebih dahulu, bukan P2 yang tiba lebih awal. Langkah ini membersihkan proses singkat dengan cepat, sehingga *Waiting Time* P4 hanya 3 unit (Start 6 - Arrival 3).
 
-SJF tidak lebih baik untuk setiap proses individu. P2, misalnya, justru mengalami waktu tunggu yang lebih lama di SJF (15 unit) dibandingkan di FCFS (5 unit). Namun, SJF terbukti optimal dalam menurunkan rata-rata waktu tunggu untuk keseluruhan set proses, menjadikannya ideal untuk sistem yang mementingkan throughput total.
+SJF tidak lebih baik untuk setiap proses individu. P2, misalnya, justru mengalami waktu tunggu yang lebih lama di SJF (15 unit) dibandingkan di FCFS (5 unit). Namun, SJF terbukti optimal dalam menurunkan rata-rata waktu tunggu untuk keseluruhan set proses, menjadikannya ideal untuk sistem yang mementingkan *throughput* total.
 
 ---
 
 ## Kesimpulan
-* Perhitungan Waiting Time (WT) dan Turnaround Time (TAT) dapat dilakukan secara sistematis untuk mengevaluasi performa algoritma penjadwalan.
+* Perhitungan **Waiting Time (WT)** dan **Turnaround Time (TAT)** dapat dilakukan secara sistematis untuk mengevaluasi performa algoritma penjadwalan.
 
 * Algoritma FCFS adalah yang paling sederhana untuk diimplementasikan, namun sangat tidak efisien jika proses pendek tiba setelah proses panjang, menyebabkan 'convoy effect' dan waktu tunggu rata-rata yang tinggi.
 
 * Algoritma SJF terbukti optimal dalam skenario ini, menghasilkan rata-rata waktu tunggu dan turnaround time yang minimum dengan memprioritaskan proses-proses terpendek.
 
-* Pemilihan algoritma penjadwalan memiliki dampak langsung pada responsivitas dan efisiensi sistem. SJF unggul untuk efisiensi throughput, sementara FCFS unggul dalam kesederhanaan dan keadilan (tidak menyebabkan starvation).
+* Pemilihan algoritma penjadwalan memiliki dampak langsung pada responsivitas dan efisiensi sistem. SJF unggul untuk efisiensi throughput, sementara FCFS unggul dalam kesederhanaan dan keadilan (tidak menyebabkan *starvation*).
 
 ---
 
@@ -155,13 +161,13 @@ SJF tidak lebih baik untuk setiap proses individu. P2, misalnya, justru mengalam
 
    **Jawaban:** 
    
-   SJF optimal karena ia "membersihkan" antrian dari proses-proses pendek secepat mungkin. Dengan mengeksekusi proses-proses pendek terlebih dahulu, ia mengurangi jumlah total proses yang menunggu di antrian pada setiap titik waktu, yang secara matematis akan menurunkan total waktu tunggu dan, akibatnya, menghasilkan rata-rata waktu tunggu minimum.
+   SJF optimal karena ia `membersihkan` antrian dari proses-proses pendek secepat mungkin. Dengan mengeksekusi proses-proses pendek terlebih dahulu, ia mengurangi jumlah total proses yang menunggu di antrian pada setiap titik waktu, yang secara matematis akan menurunkan total waktu tunggu dan, akibatnya, menghasilkan rata-rata waktu tunggu minimum.
 
 3. **Apa kelemahan SJF jika diterapkan pada sistem interaktif?**
 
    **Jawaban:** 
    
-   Kelemahan utamanya adalah potensi starvation. Jika ada aliran proses-proses pendek baru yang datang terus-menerus (misalnya, ketikan keyboard, klik mouse), sebuah proses panjang (misalnya, kompilasi kode atau rendering video) mungkin tidak akan pernah mendapat giliran dieksekusi oleh CPU karena selalu "kalah" prioritas oleh job-job yang lebih pendek.
+   Kelemahan utamanya adalah potensi *starvation*. Jika ada aliran proses-proses pendek baru yang datang terus-menerus (misalnya, ketikan keyboard, klik mouse), sebuah proses panjang (misalnya, kompilasi kode atau rendering video) mungkin tidak akan pernah mendapat giliran dieksekusi oleh CPU karena selalu "kalah" prioritas oleh job-job yang lebih pendek.
 
 ---
 
