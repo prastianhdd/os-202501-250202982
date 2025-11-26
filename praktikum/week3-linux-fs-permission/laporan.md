@@ -156,7 +156,7 @@ ls -l percobaan.txt
 sudo chmod 600 percobaan.txt
 ```
 * Tidak ada output
-* Perintah ini artinya mengubah izin file menjadi `600`, di mana hanya pemilik yang memiliki hak baca (*read*)  dan tulis (*write*). Grup dan lainnya tidak memiliki izin .
+* Perintah ini artinya mengubah izin file menjadi `600`, di mana hanya pemilik yang memiliki hak baca (*read*)  dan tulis (*write*). Grup dan lainnya tidak memiliki izin.
 ---
 > Langkah 4
 ```bash
