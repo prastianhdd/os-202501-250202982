@@ -36,7 +36,7 @@ Langkah-langkah pengerjaan praktikum Minggu 6 adalah sebagai berikut:
 1.  Menyiapkan data proses yang mencakup Burst Time, Arrival Time, dan (untuk Priority Scheduling) nilai Prioritas.
 2.  Melakukan **Eksperimen 1 (Round Robin)** dengan *time quantum* (q) = 3. Ini melibatkan pembuatan Gantt Chart, pelacakan sisa *burst time* per putaran, dan perhitungan WT serta TAT.
 3.  Melakukan **Eksperimen 2 (Priority Scheduling Non-Preemptive)**. Proses diurutkan dan dieksekusi berdasarkan prioritas tertinggi (nilai angka terkecil) yang telah tiba di antrian.
-4.  Melakukan simulasi **Eksperimen 3 (Analisis Quantum)** dengan mengubah time quantum RR menjadi (q) = 2 dan (q) = 5 .
+4.  Melakukan simulasi **Eksperimen 3 (Analisis Quantum)** dengan mengubah time quantum RR menjadi (q) = 2 dan (q) = 5
 5.  Menganalisis hasil dari kedua eksperimen dan menyajikannya dalam tabel perbandingan untuk mengevaluasi kelebihan serta kekurangan masing-masing.
 6.  Mendokumentasikan seluruh hasil perhitungan, ***Gantt Chart*** (bisa dalam bentuk tabel atau gambar) untuk di analisis.
 7.  Melakukan *commit* dan *push* laporan akhir ke repositori GitHub dengan pesan commit yang sesuai.
