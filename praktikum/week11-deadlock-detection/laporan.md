@@ -234,7 +234,7 @@ Berdasarkan simulasi deteksi dan pemulihan yang dilakukan menggunakan program Py
 
 2. **Empat Syarat Deadlock Terbukti:** Percobaan ini memvalidasi teori bahwa deadlock hanya akan terjadi jika empat kondisi terpenuhi secara bersamaan, yaitu: *Mutual Exclusion* (satu jalur satu kendaraan), *Hold and Wait* (berhenti sambil memegang jalur), *No Preemption* (tidak bisa usir paksa), dan *Circular Wait* (saling tunggu melingkar).
 
-3.** Solusi Memerlukan Tindakan Tegas:** Berbeda dengan strategi pencegahan, strategi pemulihan (recovery) mengharuskan sistem untuk mengambil tindakan tegas. Mematikan proses (terminating process) adalah metode yang paling efektif untuk memutus mata rantai ketergantungan, meskipun hal tersebut berisiko menyebabkan hilangnya progres kerja pada proses yang dikorbankan.
+3.**Solusi Memerlukan Tindakan Tegas:** Berbeda dengan strategi pencegahan, strategi pemulihan (recovery) mengharuskan sistem untuk mengambil tindakan tegas. Mematikan proses (terminating process) adalah metode yang paling efektif untuk memutus mata rantai ketergantungan, meskipun hal tersebut berisiko menyebabkan hilangnya progres kerja pada proses yang dikorbankan.
 
 ---
 
