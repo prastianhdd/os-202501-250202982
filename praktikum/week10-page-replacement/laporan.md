@@ -46,7 +46,6 @@ Manajemen memori virtual memungkinkan eksekusi proses yang ukurannya lebih besar
 ## Kode / Perintah
 Berikut adalah potongan logika utama untuk kedua algoritma:
 
-**Logika FIFO (Menggunakan Pointer Melingkar):**
 ```python
 # SIMULASI 1: FIFO (First-In First-Out)
 frames_fifo = [] 
