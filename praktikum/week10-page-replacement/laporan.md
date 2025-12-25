@@ -120,7 +120,7 @@ Berikut adalah output program saat dijalankan dengan dataset uji:
    
     | Algoritma | Jumlah Page Fault | Keterangan |
     | :-- | :--: | :-- |
-    | FIFO (First-In First-Out) | 12 | Membuang halaman berdasarkan waktu masuk tanpa melihat frekuensi akses. |
+    | FIFO (First-In First-Out) | 10 | Membuang halaman berdasarkan waktu masuk tanpa melihat frekuensi akses. |
     | LRU (Least Recently Used) | 9 | Mempertahankan halaman yang baru saja digunakan untuk meminimalkan fault. |
 
 2. **Analisis Perbedaan Page Fault**
@@ -143,7 +143,7 @@ Berikut adalah output program saat dijalankan dengan dataset uji:
 
       - Optimalitas Terhadap Pola Kerja Aplikasi: Sebagian besar aplikasi komputer tidak mengakses data secara acak, melainkan berulang-ulang pada blok yang sama dalam satu waktu (prinsip locality of reference). LRU dirancang khusus untuk mengeksploitasi perilaku ini.
 
-      - Reduksi Operasi I/O: Page fault adalah operasi yang mahal karena melibatkan akses ke disk (SSD/HDD) yang jauh lebih lambat daripada RAM. Dengan selisih 3 page fault (12 vs 9), LRU berhasil mengurangi beban kerja I/O sistem sebesar 25% dibandingkan FIFO pada dataset ini.
+      - Reduksi Operasi I/O: Page fault adalah operasi yang mahal karena melibatkan akses ke disk (SSD/HDD) yang jauh lebih lambat daripada RAM. Dengan selisih 3 page fault (10 vs 9), LRU berhasil mengurangi beban kerja I/O sistem sebesar 25% dibandingkan FIFO pada dataset ini.
 
       - Ketahanan Terhadap Anomali: Tidak seperti FIFO yang rentan terhadap Belady’s Anomaly (di mana penambahan frame justru bisa memperbanyak fault), LRU memberikan jaminan performa yang lebih stabil karena termasuk dalam kategori stack algorithm.
 
