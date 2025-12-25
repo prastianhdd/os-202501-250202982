@@ -1,0 +1,4 @@
+Proses,Allocation,Request
+Mobil_A,Jalur_Utara,Jalur_Timur
+Mobil_B,Jalur_Timur,Jalur_Selatan
+Mobil_C,Jalur_Selatan,Jalur_Utara
