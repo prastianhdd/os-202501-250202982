@@ -40,7 +40,7 @@ Manajemen memori virtual memungkinkan eksekusi proses yang ukurannya lebih besar
         git add .
         git commit -m "Minggu 10 - Page Replacement FIFO & LRU"
         git push origin main
-   ```
+        ```
 ---
 
 ## Kode / Perintah
