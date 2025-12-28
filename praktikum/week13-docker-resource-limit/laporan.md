@@ -243,8 +243,6 @@ Percobaan ini mendemonstrasikan keunggulan utama Docker dibandingkan Virtual Mac
 
 ## Kesimpulan
 
-## Kesimpulan
-
 Berdasarkan praktikum ini, dapat disimpulkan bahwa :
 1. Docker secara default mengizinkan container menggunakan sumber daya host secara penuh yang dibuktikan dengan keberhasilan program mencapai target maksimal tanpa kendala. Namun, saat limitasi memori 256MB diterapkan, program terhenti lebih cepat dari perhitungan matematis akibat adanya konsumsi memori tambahan oleh sistem operasi dan runtime Python di dalam container.
 2. Mekanisme OOM Killer bekerja efektif mematikan proses yang melanggar batas memori demi menjaga stabilitas sistem utama. 
