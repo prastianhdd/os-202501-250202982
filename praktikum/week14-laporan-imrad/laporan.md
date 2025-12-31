@@ -101,12 +101,16 @@ Berdasarkan pengujian yang telah dilakukan pada perangkat keras yang sama, diper
 ## 3.1 Data Kuantitatif
 Tabel berikut merangkum rata-rata konsumsi sumber daya dan waktu eksekusi dari 3 kali percobaan.
 
+<div align="center">
+
 | Parameter Pengujian | Virtual Machine (Ubuntu) | Docker Container (Python Alpine) | Selisih (Estimasi) |
 | :--- | :--- | :--- | :--- |
 | **Waktu Booting / Startup** | 54.5 Detik | 4.1 Detik | Docker ~13x Lebih Cepat |
 | **Penggunaan RAM (Idle)** | 2104 MB (Alokasi Tetap) | 6.1 MB | VM butuh RAM 350x lebih besar |
 | **Ukuran File (Disk Space)** | 4.3 GB (Fresh Install) | 83.66 MB (Image Size) | VM memakan *space* 51x lebih besar |
 | **Beban CPU saat Idle** | 2% - 5% | < 0.1% | Docker hampir tidak membebani CPU |
+
+</div>
 
 > *Catatan: Data di atas diambil menggunakan Stopwatch digital dan Windows Task Manager pada kondisi laptop tidak menjalankan aplikasi berat lain.*
 
@@ -115,11 +119,15 @@ Tabel berikut merangkum rata-rata konsumsi sumber daya dan waktu eksekusi dari 3
 ## 3.2 Bukti Visual (Screenshot)
 Untuk memvalidasi data di atas, berikut adalah perbandingan tampilan antarmuka dan penggunaan sumber daya yang tertangkap layar.
 
+<div align="center">
+
 | Kondisi | Tampilan Virtual Machine (VirtualBox) | Tampilan Docker |
 | :--- | :---: | :---: |
 | **Proses Booting** | <img src="screenshots/vm_boot.jpg" width="300" alt="Booting Ubuntu"> | <img src="screenshots/docker_run.png" width="300" alt="Docker Run"> |
 | **Task Manager (RAM)** | <img src="screenshots/vm_ram.jpg" width="300" alt="RAM Usage VM"> | <img src="screenshots/docker_ram.png" width="300" alt="RAM Usage Docker"> |
 | **Ukuran File** | <img src="screenshots/vm_size.png" width="300" alt="Size VDI VM"> | <img src="screenshots/docker_size.png" width="300" alt="Docker Image Size"> |
+
+</div>
 
 Dari data di atas bisa dilihat bahwa :
 * Proses Booting di Docker lebih cepat 13x dari VM , di docker cukup 4,1 Detik di VM butuh 55 Detik.
@@ -127,10 +135,15 @@ Dari data di atas bisa dilihat bahwa :
 * Disk VM Lebih besar karena memang menggunakan GUI makanya butuh resource banyak, sedangkan Dockcer lebih sedikit Disk karena hanya sebatas terminal saja.
 
 ## 3.3 Bukti Praktikum 
+
+<div align="center">
+
 | Tampilan Virtual Machine / Docker | Keterangan |
 | :--- | :--- |
 | <img src="screenshots/vm_konfigurasi.png" width="400" alt="VM Konfigurasi"> | Konfigurasi VM Linux Ubuntu |
 | <img src="screenshots/docker_container.png" width="400" alt="Detail Container"> | Detail Docker Containers Saat Program Dijalankan |
+
+</div>
 ---
 
 # IV. Discussion (Pembahasan)
@@ -145,6 +158,8 @@ Perbedaan utama kinerja disebabkan oleh arsitektur dasar kedua teknologi ini.
 
 Hal ini sejalan dengan dokumentasi resmi Google Cloud (2021) yang menyatakan bahwa kontainer beroperasi pada level OS sehingga ukurannya hanya dalam hitungan MB, berbeda dengan VM yang mencapai GB karena membawa Guest OS penuh. Berikut adalah tabel perbandingan teoritis menurut Google Cloud:
 
+<div align="center">
+
 | Fitur | Virtual Machine | Container |
 | :--- | :--- | :--- |
 | Sistem Operasi | OS Tamu (instance OS penuh) | Berbagi Kernel OS Host |
@@ -155,6 +170,8 @@ Hal ini sejalan dengan dokumentasi resmi Google Cloud (2021) yang menyatakan bah
 | Isolasi | Tingkat Hardware | Tingkat Proses |
 | Portabilitas | Kurang Portabel | Sangat Portabel |
 | Kasus Penggunaan | Aplikasi yang memerlukan isolasi kuat | Microservice, Aplikasi  Web, Aplikasi Cloud |
+
+</div>
 
 ## 4.2 Analisis Efisiensi Penyimpanan
 Pada pengujian penyimpanan, VM membutuhkan ruang disk sebesar 4.3 GB hanya untuk sistem dasar Ubuntu. Sebagian besar ruang ini berisi file sistem operasi yang sebenarnya tidak langsung dibutuhkan untuk menjalankan script Python sederhana.
