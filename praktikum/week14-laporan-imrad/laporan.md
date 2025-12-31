@@ -212,4 +212,4 @@ Berdasarkan hasil pengujian dan analisis yang telah dilakukan, dapat disimpulkan
 1.  Docker Inc. (2024). *Docker Overview*. docs.docker.com
 2.  Oracle. (2024). *Oracle VM VirtualBox User Manual*. virtualbox.org
 3.  Merkel, D. (2014). *Docker: lightweight linux containers for consistent development and deployment*. Linux Journal.
-4.  Google Cloud. (2021). Containers vs. virtual machines (VMs). cloud.google.com.
+4.  Google Cloud. (2021). *Containers vs. virtual machines (VMs)*. cloud.google.com.
