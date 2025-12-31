@@ -186,7 +186,7 @@ Meskipun Docker unggul dalam performa, VirtualBox tetap memiliki kegunaan tersen
 
 ---
 
-# V. Conclusion (Kesimpulan)
+# V. Closing (Penutupan)
 
 ## 5.1 Kesimpulan
 Berdasarkan hasil pengujian dan analisis yang telah dilakukan, dapat disimpulkan bahwa:
