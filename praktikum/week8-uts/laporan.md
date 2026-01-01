@@ -6,7 +6,7 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ## Identitas
 - **Nama**  : Prastian Hidayat
-- **NIM**   : [NIM Mahasiswa]  
+- **NIM**   : 250202982 
 - **Kelas** : [Kelas]
 
 ---
