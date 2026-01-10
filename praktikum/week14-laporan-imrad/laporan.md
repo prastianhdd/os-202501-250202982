@@ -14,7 +14,7 @@ Topik : Penyusunan Laporan Praktikum Format IMRAD
 Analisis Efisiensi Sumber Daya Virtual Machine dan Docker Container
 
 ---
-# I. Pendahuluan
+# 1. Pendahuluan
 
 ## 1.1 Latar Belakang
 
@@ -42,7 +42,7 @@ Penelitian ini bertujuan untuk:
 
 ---
 
-# II. Methods (Metodologi Penelitian)
+# 2. Methods (Metodologi Penelitian)
 
 ## 2.1 Lingkungan Pengujian
 Pengujian dilakukan pada satu perangkat keras yang sama untuk memastikan konsistensi hasil. Spesifikasi perangkat keras dan perangkat lunak yang digunakan adalah sebagai berikut:
@@ -94,7 +94,7 @@ Data dikumpulkan berdasarkan tiga metrik utama efisiensi:
 5.  Mendokumentasikan hasil dalam bentuk tangkapan layar (*screenshot*) dan tabel.
 ---
 
-# III. Results (Hasil Penelitian)
+# 3. Results (Hasil Penelitian)
 
 Berdasarkan pengujian yang telah dilakukan pada perangkat keras yang sama, diperoleh data perbandingan kinerja antara Virtual Machine (Ubuntu Server di VirtualBox) dan Docker Container (`python:3.11.14-alpine`). Data disajikan dalam dua bentuk: data kuantitatif (angka) dan bukti visual.
 
@@ -146,7 +146,7 @@ Dari data di atas bisa dilihat bahwa :
 </div>
 ---
 
-# IV. Discussion (Pembahasan)
+# 4. Discussion (Pembahasan)
 
 Berdasarkan hasil pengujian yang tertera pada Bab III, terlihat perbedaan performa yang sangat signifikan antara Virtual Machine (VM) dan Docker. Bagian ini akan menganalisis penyebab teknis dari perbedaan tersebut.
 
@@ -186,7 +186,7 @@ Meskipun Docker unggul dalam performa, VirtualBox tetap memiliki kegunaan tersen
 
 ---
 
-# V. Closing (Penutupan)
+# 5. Closing (Penutupan)
 
 ## 5.1 Kesimpulan
 Berdasarkan hasil pengujian dan analisis yang telah dilakukan, dapat disimpulkan bahwa:
@@ -205,6 +205,24 @@ Berdasarkan hasil pengujian dan analisis yang telah dilakukan, dapat disimpulkan
 
 3. Eksplorasi lebih lanjut mengenai integrasi antara Docker dan Virtual Machine dalam satu alur kerja sangat disarankan untuk memberikan pemahaman menyeluruh tentang kapan harus menggunakan isolasi penuh dan kapan menggunakan efisiensi kontainer.
 
+---
+## 5.3 Quiz
+
+**1. Mengapa format IMRAD membantu membuat laporan praktikum lebih ilmiah dan mudah dievaluasi?**
+
+Format IMRAD (*Introduction, Methods, Results, and Discussion*) memberikan kerangka berpikir yang terstandarisasi dan logis. Hal ini membuat laporan lebih ilmiah karena alurnya meniru proses penemuan sains: mendefinisikan masalah, melakukan eksperimen, mengumpulkan data, dan menganalisis makna data tersebut. Bagi pengevaluasi (dosen), format ini memudahkan navigasi informasi; dosen dapat dengan cepat memverifikasi validitas pengujian di bagian *Methods* atau melihat bukti empiris di bagian *Results* tanpa tercampur dengan opini subjektif.
+
+**2. Apa perbedaan antara bagian Hasil (*Results*) dan Pembahasan (*Discussion*)?**
+
+* **Bagian Hasil (*Results*):** Bersifat objektif dan deskriptif. Bagian ini hanya menyajikan data mentah ("apa yang terjadi") tanpa interpretasi. Contoh dalam laporan ini adalah tabel selisih waktu booting dan *screenshot* Task Manager.
+* **Bagian Pembahasan (*Discussion*):** Bersifat analitis dan interpretatif. Bagian ini menjelaskan makna di balik data tersebut ("mengapa itu terjadi"). Contoh dalam laporan ini adalah penjelasan mengenai perbedaan arsitektur *Hypervisor* (VM) dan *Container Engine* (Docker) yang menyebabkan perbedaan konsumsi RAM.
+
+**3. Mengapa sitasi dan daftar pustaka penting, bahkan untuk laporan praktikum?**
+
+Sitasi dan daftar pustaka penting untuk menjaga integritas akademik dan validitas laporan.
+1.  **Menghindari Plagiarisme:** Memberikan kredit kepada pemilik ide atau pengembang teknologi (seperti dokumentasi resmi Docker/Oracle).
+2.  **Memperkuat Argumen:** Menunjukkan bahwa analisis yang ditulis didukung oleh landasan teori yang kuat dan sumber terpercaya, bukan sekadar asumsi pribadi mahasiswa.
+3.  **Ketelusuran:** Memudahkan pembaca untuk melacak sumber asli jika ingin mempelajari topik tersebut lebih mendalam.
 ---
 
 # References (Daftar Pustaka)
