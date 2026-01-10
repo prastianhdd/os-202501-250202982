@@ -73,14 +73,14 @@ Saya memilih untuk menjalankan Virtual OS Linux Ubuntu 24.04 LTS Dekstop, maka d
 4.  Menyalakan kembali VM dan mengulangi pengujian dengan membuka Firefox.
 5.  Mengamati terjadinya penurunan performa (*lag*) dan peningkatan penggunaan memori hingga mendekati batas maksimal.
 
-### D. Analisis dan Dokumentasi
+### E. Analisis dan Dokumentasi
 1. Mencatat proses praktikum dari awal persiapan hingga akhir.
 2. Screenshot hasil instalasi virtual box kemudian simpan di `screenshors/instalasi_vm.png`
 3. Screenshot hasil konfigurasi Virtual Machine Linux Ubuntu 24.04 LTS dan simpan di `screenshots/konfigurasi_resource.png`
 4. Screenshot hasil eksperimen di OS Guest dan simpan di `screenshots/os_guest_running.png`
 5. Mencatat konfigurasi Spesifikasi Host OS dan Spefisikasi Guest OS kemudian simpan di code/`catatan_konfigurasi`
 
-### E. Commit & Push
+### F. Commit & Push
    ```bash
    git add .
    git commit -m "Minggu 12 - Virtual Machine"
@@ -124,7 +124,7 @@ Proses pembuatan mesin virtual menggunakan fitur *Unattended Install* di Virtual
   <img src="./screenshots/konfigurasi_resource.png" alt="Konfigurasi VM" width="550"/>
 </p>
 
-### 2. Eksperimen VM Linux Ubuntu 24.04 LTS
+### 3. Eksperimen VM Linux Ubuntu 24.04 LTS
 Pengecekan spesifikasi menggunakan perintah `uname -a` (cek kernel) dan `free -h` (cek RAM).
 
 Terlihat total RAM yang terbaca adalah 3.8Gi (4GB).
@@ -137,7 +137,7 @@ Pengujian beban kerja dengan membuka 5 tab Firefox (YouTube dan GitHub).
   <img src="./screenshots/os_guest_running.png" alt="OS Guest Running" width="550"/>
 </p>
 
-### 3. Stress Test (Skenario Low Resource : RAM 2 GB)
+### 4. Stress Test (Skenario Low Resource : RAM 2 GB)
 Setelah proses mengurangi Resource , kemudian membuka lagi VM dan membuka system manager, terlihat belum menjalankan aplikasi lain sudah memakan RAM 1.4 GB ( 62% ).
 <p align="center">
   <img src="./screenshots/vm_resource.jpg" alt="Mengurangi Resource" width="500"/>
@@ -148,7 +148,7 @@ Saat menggunakan RAM 4GB, membuka 5 tab berjalan lancar meski RAM terpakai 90%. 
   <img src="./screenshots/firefox.jpg" alt="Firefox" width="500"/>
 </p>
 
-### 4. Catatan Konfigurasi
+### 5. Catatan Konfigurasi
    ```text
    A. SPESIFIKASI HOST (KOMPUTER ASLI)
    -----------------------------------------------------
