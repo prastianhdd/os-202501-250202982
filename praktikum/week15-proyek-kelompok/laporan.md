@@ -2,7 +2,7 @@
 
 ## 1. Pendahuluan
 
-### A Latar Belakang
+### A. Latar Belakang
 Sistem operasi merupakan perangkat lunak sistem yang bertugas mengelola sumber daya perangkat keras dan perangkat lunak, serta bertindak sebagai perantara antara pengguna dan perangkat keras komputer. Konsep-konsep inti di dalamnya, seperti penjadwalan proses (*CPU Scheduling*) dan manajemen memori (*Memory Management*), sering kali bersifat abstrak dan sulit dipahami tanpa visualisasi yang konkret. Oleh karena itu, diperlukan sebuah pendekatan praktis untuk mendemonstrasikan bagaimana sistem operasi bekerja dalam menangani tugas-tugas tersebut.
 
 Proyek ini, yang bertajuk "Mini Simulasi Sistem Operasi", dikembangkan untuk mengintegrasikan materi praktikum menjadi sebuah aplikasi berbasis terminal yang fungsional. Aplikasi ini dirancang untuk mensimulasikan logika sistem operasi melalui analogi kegiatan sehari-hari agar lebih mudah dipahami. Kami mengimplementasikan dua modul utama:
@@ -34,7 +34,7 @@ Secara garis besar, arsitektur aplikasi terdiri dari tiga komponen utama:
 
 Seluruh komponen ini dibungkus dalam **Docker container** untuk menjamin aplikasi dapat berjalan secara konsisten di berbagai lingkungan sistem operasi tanpa hambatan dependensi.
 
-### B Deskripsi Modul
+### B. Deskripsi Modul
 Aplikasi ini mengintegrasikan dua modul utama yang mensimulasikan fungsi inti sistem operasi:
 
 #### 1. Modul CPU Scheduling (Download Manager)
@@ -60,7 +60,7 @@ Modul ini mensimulasikan algoritma manajemen memori **FIFO (First-In First-Out)*
     4.  Jika aplikasi belum ada dan RAM penuh (*Miss/Page Fault*), sistem akan menghapus aplikasi yang paling awal masuk (indeks ke-0) untuk memberi ruang bagi aplikasi baru.
 * **Output:** Tabel visualisasi isi RAM pada setiap langkah dan total jumlah aplikasi yang ditutup paksa (*Page Fault count*).
 
-### C Alur Data (Data Flow)
+### C. Alur Data (Data Flow)
 Aliran data dalam aplikasi berjalan secara sekuensial sebagai berikut:
 
 1.  **Inisialisasi:** Pengguna menjalankan aplikasi melalui terminal (atau Docker). Program `main.py` memuat pustaka yang diperlukan.
@@ -120,6 +120,7 @@ Kami menggunakan dataset antrean unduhan (`processes.csv`) dengan data sebagai b
 4.  **Film.mp4** (Waktu Klik: 3, Durasi: 20s)
 
 **Hasil Output Aplikasi:**
+
 Berikut adalah screnshoots hasil simulasi yang dihasilkan:
 
 <p align="center">
@@ -140,6 +141,7 @@ Berikut adalah tabel hasil simulasi yang dihasilkan oleh aplikasi:
 | **Rata-rata** |       |          | **41.75 detik** |
 
 **Analisis Kinerja:**
+
 Berdasarkan hasil di atas, terlihat kelemahan utama algoritma *First-Come First-Served* (FCFS), yaitu fenomena **Convoy Effect**.
 * Berkas besar (`MobileLegends.apk`) yang datang di awal menyebabkan berkas-berkas kecil di belakangnya (`TugasKuliah.pdf` dan `Lagu.mp3`) harus menunggu sangat lama.
 * `Lagu.mp3` yang hanya membutuhkan 3 detik untuk diunduh terpaksa menunggu selama 58 detik. Hal ini menunjukkan bahwa FCFS tidak efisien untuk meminimalkan *average waiting time* jika terdapat variasi *burst time* yang besar.
@@ -149,11 +151,13 @@ Berdasarkan hasil di atas, terlihat kelemahan utama algoritma *First-Come First-
 ### B Hasil Pengujian Modul B (Page Replacement - FIFO)
 
 **Skenario Pengujian:**
+
 Kami mensimulasikan manajemen RAM HP menggunakan dataset riwayat aplikasi (`pages.txt`) dengan urutan akses:
 `WhatsApp, Discord, YouTube, Mobile Legend, WhatsApp, Discord, Instagram, YouTube`.
 Kapasitas RAM diset menjadi **3 Aplikasi** (*frames*).
 
 **Hasil Output Aplikasi:**
+
 Berikut adalah screnshoots hasil simulasi yang dihasilkan:
 
 <p align="center">
@@ -211,18 +215,18 @@ Sebagai bagian dari evaluasi pemahaman, berikut adalah jawaban atas pertanyaan q
 ### 6.1 Jawaban Quiz
 
 **1. Tantangan terbesar integrasi modul apa, dan bagaimana solusinya?**
-* **Tantangan:** Menggabungkan dua modul yang bekerja dengan tipe data berbeda (CSV untuk scheduling dan TXT untuk memori) ke dalam satu alur eksekusi di `main.py` tanpa mengganggu logika masing-masing. Selain itu, memastikan *path* file dataset terbaca dengan benar baik saat dijalankan di Windows/Linux maupun di dalam Docker container.
-* **Solusi:** Kami melakukan modularisasi fungsi secara ketat. Fungsi baca file (`load_data`) dipisahkan dari fungsi logika simulasi. Di `main.py`, kami menggunakan percabangan menu sederhana yang memanggil fungsi utama dari tiap modul (`simulasi_download_fcfs` atau `simulasi_ram_hp`) sehingga variabel antar modul tidak saling menimpa.
+  * **Tantangan:** Menggabungkan dua modul yang bekerja dengan tipe data berbeda (CSV untuk scheduling dan TXT untuk memori) ke dalam satu alur eksekusi di `main.py` tanpa mengganggu logika masing-masing. Selain itu, memastikan *path* file dataset terbaca dengan benar baik saat dijalankan di Windows/Linux maupun di dalam Docker container.
+  * **Solusi:** Kami melakukan modularisasi fungsi secara ketat. Fungsi baca file (`load_data`) dipisahkan dari fungsi logika simulasi. Di `main.py`, kami menggunakan percabangan menu sederhana yang memanggil fungsi utama dari tiap modul (`simulasi_download_fcfs` atau `simulasi_ram_hp`) sehingga variabel antar modul tidak saling menimpa.
 
 **2. Mengapa Docker membantu proses demo dan penilaian proyek?**
-* Docker menciptakan lingkungan yang terisolasi dan konsisten (*reproducible environment*).
-* Masalah klasik *"It works on my machine"* dapat dihindari karena asisten/dosen penilai tidak perlu menginstall dependensi Python atau memikirkan versi OS yang berbeda. Cukup dengan perintah `docker run`, aplikasi dijamin berjalan sama persis seperti saat kami mengembangkannya.
+  * Docker menciptakan lingkungan yang terisolasi dan konsisten (*reproducible environment*).
+  * Masalah klasik *"It works on my machine"* dapat dihindari karena asisten/dosen penilai tidak perlu menginstall dependensi Python atau memikirkan versi OS yang berbeda. Cukup dengan perintah `docker run`, aplikasi dijamin berjalan sama persis seperti saat kami mengembangkannya.
 
 **3. Jika dataset diperbesar 10x, modul mana yang paling terdampak performanya? Jelaskan.**
-* **Jawaban:** Modul **CPU Scheduling**.
-* **Analisis:** Pada modul CPU Scheduling, terdapat proses pengurutan (*sorting*) data berdasarkan waktu kedatangan yang menggunakan algoritma **Bubble Sort**. Kompleksitas waktu Bubble Sort adalah $O(n^2)$.
-* Jika data diperbesar 10x, beban komputasi sorting akan meningkat secara kuadratik (sekitar 100x lebih berat).
-* Sebaliknya, modul Page Replacement (FIFO) memiliki kompleksitas linear $O(n)$ (atau $O(n \times m)$ di mana $m$ kapasitas RAM yang kecil). Peningkatan data 10x pada modul memori "hanya" akan memperpanjang waktu eksekusi sekitar 10x lipat (linear), sehingga dampaknya tidak separah modul Scheduling.
+  * **Jawaban:** Modul **CPU Scheduling**.
+  * **Analisis:** Pada modul CPU Scheduling, terdapat proses pengurutan (*sorting*) data berdasarkan waktu kedatangan yang menggunakan algoritma **Bubble Sort**. Kompleksitas waktu Bubble Sort adalah $O(n^2)$.
+  * Jika data diperbesar 10x, beban komputasi sorting akan meningkat secara kuadratik (sekitar 100x lebih berat).
+  * Sebaliknya, modul Page Replacement (FIFO) memiliki kompleksitas linear $O(n)$ (atau $O(n \times m)$ di mana $m$ kapasitas RAM yang kecil). Peningkatan data 10x pada modul memori "hanya" akan memperpanjang waktu eksekusi sekitar 10x lipat (linear), sehingga dampaknya tidak separah modul Scheduling.
 
 ### 6.2 Kesimpulan
 Proyek "Mini Simulasi Sistem Operasi" ini berhasil mendemonstrasikan logika dasar sistem operasi melalui pendekatan simulasi sederhana.
