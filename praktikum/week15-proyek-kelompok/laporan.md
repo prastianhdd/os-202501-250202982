@@ -86,7 +86,11 @@ Demo aplikasi ini dijalankan pada lingkungan terisolasi menggunakan **Docker Con
 Berikut adalah ringkasan prosedur demo yang dilakukan untuk memverifikasi fungsionalitas aplikasi. Petunjuk teknis baris-per-baris (*step-by-step commands*) dapat dilihat pada lampiran `code/README.md`.
 
 1.  **Tahap Build Image**
-    Kami membangun citra Docker (*docker image*) bernama `os-sim-group`. Proses ini memastikan seluruh dependensi dan struktur folder tersusun dengan benar sesuai konfigurasi `Dockerfile`.
+    Kami membangun citra Docker (*docker image*) bernama `week15-proyek-kelompok`. Proses ini memastikan seluruh dependensi dan struktur folder tersusun dengan benar sesuai konfigurasi `Dockerfile`.
+
+    <p align="center">
+    <img src="./screenshots/docker-build.png" alt="Run Dengan Limit" width="600"/>
+    </p>
 
 2.  **Tahap Eksekusi (Run)**
     Container dijalankan dalam mode interaktif (`-it`) untuk memungkinkan pengguna berinteraksi dengan menu CLI aplikasi. Mode `--rm` diaktifkan agar container otomatis dibersihkan setelah demo selesai, menjaga kebersihan *resource* sistem host.
@@ -116,6 +120,14 @@ Kami menggunakan dataset antrean unduhan (`processes.csv`) dengan data sebagai b
 4.  **Film.mp4** (Waktu Klik: 3, Durasi: 20s)
 
 **Hasil Output Aplikasi:**
+Berikut adalah screnshoots hasil simulasi yang dihasilkan:
+
+<p align="center">
+  <img src="./screenshots/cpu-scheduling.png" alt="Run Dengan Limit" width="600"/>
+</p>
+
+---
+
 Berikut adalah tabel hasil simulasi yang dihasilkan oleh aplikasi:
 
 | File Name          | Waktu | Durasi   | Waiting Time (Tunggu) |
@@ -142,6 +154,14 @@ Kami mensimulasikan manajemen RAM HP menggunakan dataset riwayat aplikasi (`page
 Kapasitas RAM diset menjadi **3 Aplikasi** (*frames*).
 
 **Hasil Output Aplikasi:**
+Berikut adalah screnshoots hasil simulasi yang dihasilkan:
+
+<p align="center">
+  <img src="./screenshots/page-replacement.png" alt="Run Dengan Limit" width="600"/>
+</p>
+
+---
+
 Tabel berikut menggambarkan perubahan isi RAM pada setiap langkah (Tanda **(X)** menunjukkan terjadinya *Page Fault* atau aplikasi ditutup paksa):
 
 | Langkah | Aplikasi Buka | Isi RAM (FIFO)               | Status             |
@@ -170,6 +190,11 @@ Algoritma FIFO (*First-In First-Out*) bekerja secara murni berdasarkan waktu ked
 
 Proyek ini dikerjakan secara kolaboratif dengan pembagian tugas yang jelas untuk memastikan setiap modul dapat diselesaikan tepat waktu dan terintegrasi dengan baik. Berikut adalah rincian peran dan kontribusi setiap anggota tim:
 
+<p align="center">
+  <img src="./screenshots/commits-kelompok.png" alt="Run Dengan Limit" width="600"/>
+</p>
+
+### Keterangan
 | Nama Anggota | Peran Utama | Deskripsi Kontribusi |
 | :--- | :--- | :--- |
 | **Prastian Hidayat** | *Project Lead & Integrator* | • Merancang struktur awal proyek dan `main.py`.<br>• Mengelola repositori Git (merge PR, resolve conflict).<br>• Membuat konfigurasi `Dockerfile` agar aplikasi berjalan di container.<br>• Melakukan pengujian fungsional seluruh modul.<br>• Mengumpulkan *screenshot* bukti demo.|
