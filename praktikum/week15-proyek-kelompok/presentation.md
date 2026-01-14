@@ -33,7 +33,6 @@ Secara garis besar, arsitektur aplikasi terdiri dari tiga komponen utama:
 ---
 
 ## 3. LIVE DEMO
-*(Bagian ini dilakukan langsung di Terminal / VS Code)*
 
 **Skenario Demo:**
 1.  **Jalankan Docker:**
