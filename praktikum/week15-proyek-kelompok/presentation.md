@@ -5,6 +5,14 @@
 
 ---
 
+## Nama Anggota Kelompok 
+- Prastian Hidayat (250202982)
+- Gradyan Alannahda Shofari (250202940)
+- Awwab Maftuhi (250202920)
+- Fatkhurrohman Gilang Ramadhan (250202985)
+
+---
+  
 ## 1. PENDAHULUAN
 ### Latar Belakang
 * Konsep OS (CPU Scheduling & Memory) seringkali abstrak dan sulit dibayangkan.
